@@ -3,109 +3,276 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to FutureBot AI</title>
+  <title>Welcome to AstroFinix AI</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f7f6;
-      color: #333333;
+      font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
       margin: 0;
       padding: 0;
       -webkit-font-smoothing: antialiased;
     }
+    .wrapper {
+      background-color: #0b0f19;
+      width: 100%;
+      padding: 40px 0;
+    }
     .container {
       max-width: 600px;
-      margin: 40px auto;
-      background-color: #ffffff;
-      border-radius: 8px;
+      margin: 0 auto;
+      background-color: #131a2e;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      border: 1px solid #eef2f5;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid #1e293b;
     }
     .header {
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-      color: #ffffff;
-      padding: 30px 20px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+      padding: 40px 20px;
       text-align: center;
+      position: relative;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background: linear-gradient(to top, #131a2e, transparent);
     }
     .header h1 {
       margin: 0;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 2;
+    }
+    .header p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #d1fae5;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+    .welcome-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 12px;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(4px);
     }
     .content {
-      padding: 30px;
-      line-height: 1.6;
+      padding: 40px 30px;
+      position: relative;
+      z-index: 3;
     }
-    .content h2 {
-      color: #1f2937;
+    .greeting {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
       margin-top: 0;
-      font-size: 20px;
+      margin-bottom: 15px;
     }
-    .content p {
-      margin: 0 0 16px;
-      color: #4b5563;
+    .intro-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #94a3b8;
+      margin-bottom: 30px;
     }
-    .button-container {
+    .feature-list {
+      background-color: #1e293b;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+    .feature-list h3 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #10b981;
+      letter-spacing: 1px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .feature-item:last-child {
+      margin-bottom: 0;
+    }
+    .feature-icon {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: #10b981;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      margin-right: 15px;
+      flex-shrink: 0;
+      line-height: 32px;
       text-align: center;
-      margin: 30px 0 10px;
+    }
+    .feature-text h4 {
+      margin: 0 0 4px 0;
+      color: #f8fafc;
+      font-size: 15px;
+    }
+    .feature-text p {
+      margin: 0;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .cta-container {
+      text-align: center;
+      margin: 40px 0 20px;
     }
     .btn {
       display: inline-block;
-      background-color: #4f46e5;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
       color: #ffffff !important;
       text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 6px;
-      font-weight: 600;
-      box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
-      transition: background-color 0.2s ease;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
     }
     .btn:hover {
-      background-color: #4338ca;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    }
+    .app-banner {
+      background: linear-gradient(to right, #1e293b, #0f172a);
+      border-radius: 12px;
+      border: 1px solid #334155;
+      padding: 24px;
+      text-align: center;
+      margin: 40px 0 10px;
+    }
+    .app-banner h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .app-banner p {
+      margin: 0 0 20px;
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.5;
     }
     .footer {
-      background-color: #f9fafb;
-      padding: 20px;
+      background-color: #0b0f19;
+      padding: 30px;
       text-align: center;
       font-size: 12px;
-      color: #9ca3af;
-      border-top: 1px solid #f3f4f6;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+    .footer p {
+      margin: 0 0 10px;
+    }
+    .footer a {
+      color: #10b981;
+      text-decoration: none;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>FutureBot AI</h1>
-      <div style="margin-top: 10px;">
-        <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
-          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 130px; height: auto; vertical-align: middle;" />
-        </a>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Gradient Header -->
+      <div class="header">
+        <div class="welcome-badge">Account Created</div>
+        <h1>AstroFinix AI</h1>
+        <p>Your Journey Begins Here</p>
       </div>
-    </div>
-    <div class="content">
-      <h2>Hello <%= name %>,</h2>
-      <p><%= message %></p>
-      <% if (locals.actionUrl && locals.actionText) { %>
-        <div class="button-container">
-          <a href="<%= actionUrl %>" class="btn" target="_blank"><%= actionText %></a>
-        </div>
-      <% } %>
 
-      <!-- Play Store Download Banner -->
-      <div style="background-color: #f3f4f6; border-radius: 8px; border: 1px solid #e5e7eb; padding: 20px; text-align: center; margin: 30px 0 10px;">
-        <h4 style="margin: 0 0 6px; font-size: 14px; font-weight: 700; color: #1f2937; text-transform: uppercase; letter-spacing: 1px;">AstroFinix on Your Mobile</h4>
-        <p style="margin: 0 0 12px; font-size: 12px; color: #4b5563; line-height: 1.5;">Download our app to get instant predictions, daily horoscopes, and chat with AstroFinix AI anytime.</p>
-        <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
-          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 155px; height: auto; vertical-align: middle;" />
-        </a>
+      <!-- Main Body Content -->
+      <div class="content">
+        <h2 class="greeting">Hello <%= name %>,</h2>
+        <p class="intro-text">
+          <%= message %>
+          We are beyond excited to welcome you to the AstroFinix family. Our advanced AI is ready to help you navigate your destiny with clarity and precision.
+        </p>
+
+        <!-- What to expect -->
+        <div class="feature-list">
+          <h3>What you can do next</h3>
+          
+          <div class="feature-item">
+            <div class="feature-icon">✨</div>
+            <div class="feature-text">
+              <h4>Ask Anything</h4>
+              <p>Chat with our AI Astrologer to get personalized insights about your career, love life, and future.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">📅</div>
+            <div class="feature-text">
+              <h4>Daily Horoscopes</h4>
+              <p>Check your personalized daily horoscopes to know what the stars have aligned for you today.</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">💎</div>
+            <div class="feature-text">
+              <h4>Earn Karma Coins</h4>
+              <p>Interact with the app to earn Karma Coins and unlock premium, in-depth astrological readings.</p>
+            </div>
+          </div>
+        </div>
+
+        <% if (locals.actionUrl && locals.actionText) { %>
+          <div class="cta-container">
+            <a href="<%= actionUrl %>" class="btn" target="_blank"><%= actionText %></a>
+          </div>
+        <% } %>
+
+        <!-- Play Store Download Banner -->
+        <div class="app-banner">
+          <h4>Take AstroFinix Everywhere</h4>
+          <p>Get instant predictions and chat with your AI Astrologer on the go by downloading our mobile app.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 170px; height: auto; vertical-align: middle;" />
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="footer">
-      <p>&copy; <%= new Date().getFullYear() %> FutureBot AI. All rights reserved.</p>
-      <p>This is an automated message, please do not reply directly.</p>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>&copy; <%= new Date().getFullYear() %> AstroFinix AI. All rights reserved.</p>
+        <p>This is an automated message, please do not reply directly. You can manage your preferences on <a href="https://astrofinix.com">astrofinix.com</a>.</p>
+      </div>
     </div>
   </div>
 </body>

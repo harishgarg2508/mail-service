@@ -89,7 +89,7 @@ app.get('/health', async (req, res) => {
 // Root endpoint redirect/info
 app.get('/', (req, res) => {
   res.json({
-    service: 'FutureBot SMTP Mail Service',
+    service: 'Astrofinix SMTP Mail Service',
     version: '1.0.0',
     endpoints: {
       health: 'GET /health',
@@ -201,6 +201,25 @@ app.post('/api/send-welcome', async (req, res, next) => {
       error: 'Failed to send welcome email',
       details: error.message
     });
+  }
+});
+
+// Route to list available templates
+app.get('/api/templates', (req, res) => {
+  try {
+    const templatesDir = path.join(__dirname, 'templates');
+    if (!fs.existsSync(templatesDir)) {
+      return res.status(200).json({ success: true, templates: [] });
+    }
+    const files = fs.readdirSync(templatesDir);
+    const templates = files
+      .filter(f => f.endsWith('.ejs'))
+      .map(f => f.replace('.ejs', ''));
+    
+    return res.status(200).json({ success: true, templates });
+  } catch (error) {
+    console.error('Failed to list templates:', error);
+    return res.status(500).json({ success: false, error: 'Failed to list templates' });
   }
 });
 
