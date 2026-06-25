@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to AstroFinix</title>
+  <style>
+    body {
+      font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      background-color: #0b0f19;
+      width: 100%;
+      padding: 40px 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #131a2e;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid #1e293b;
+    }
+    .header {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .header p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: #e0e7ff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .coin-badge {
+      display: inline-block;
+      background: linear-gradient(90deg, #fbbf24 0%, #f59e0b 100%);
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 10px 24px;
+      border-radius: 50px;
+      margin: 25px 0 0;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .content {
+      padding: 40px 30px;
+    }
+    .greeting {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .intro-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #a78bfa;
+      letter-spacing: 1px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 8px;
+    }
+    .grid {
+      margin-bottom: 20px;
+    }
+    .category-card {
+      background-color: #1e293b;
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 16px;
+      border: 1px solid #334155;
+    }
+    .category-header {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+    .category-icon {
+      margin-right: 8px;
+    }
+    .question-list {
+      margin: 0;
+      padding-left: 20px;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+    .question-list li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .cta-container {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+    }
+    .footer {
+      background-color: #0b0f19;
+      padding: 30px;
+      text-align: center;
+      font-size: 12px;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+    .footer p {
+      margin: 0 0 10px;
+    }
+    .footer a {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Gradient Galaxy Header -->
+      <div class="header">
+        <p>AstroFinix AI</p>
+        <h1>Welcome to the Cosmos</h1>
+        <div class="coin-badge">
+          🎁 +25 Karma Coins Credited
+        </div>
+        <div style="margin-top: 15px;">
+          <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 140px; height: auto; vertical-align: middle;" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Body Content -->
+      <div class="content">
+        <h2 class="greeting">Hi <%= name %>,</h2>
+        <p class="intro-text">
+          To help you begin your astrology journey, we have credited <strong>25 Karma Coins</strong> to your wallet completely free! 
+          <br><br>
+          Use them to ask our advanced AI astrologer anything about your destiny. Every answer is personalized using your exact birth details.
+        </p>
+
+        <h3 class="section-title">✨ Spark Your Curiosity</h3>
+
+        <div class="grid">
+          <!-- Category: Career -->
+          <div class="category-card">
+            <div class="category-header">
+              <span class="category-icon">💼</span> Career & Business
+            </div>
+            <ul class="question-list">
+              <li>Am I meant for a job or business?</li>
+              <li>When will I achieve major career success?</li>
+            </ul>
+          </div>
+
+          <!-- Category: Love & Marriage -->
+          <div class="category-card">
+            <div class="category-header">
+              <span class="category-icon">❤️</span> Love & Marriage
+            </div>
+            <ul class="question-list">
+              <li>Will I have a love marriage or an arranged marriage?</li>
+              <li>What kind of life partner is written in my destiny?</li>
+            </ul>
+          </div>
+
+          <!-- Category: Money -->
+          <div class="category-card">
+            <div class="category-header">
+              <span class="category-icon">💰</span> Wealth & Finance
+            </div>
+            <ul class="question-list">
+              <li>Will I become financially successful?</li>
+              <li>What is blocking my financial growth?</li>
+            </ul>
+          </div>
+
+          <!-- Category: Life -->
+          <div class="category-card">
+            <div class="category-header">
+              <span class="category-icon">🌟</span> Life Path
+            </div>
+            <ul class="question-list">
+              <li>What should I focus on to become successful?</li>
+              <li>What does my birth chart reveal that I don't know?</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-container">
+          <a href="<%= actionUrl %>" class="btn" target="_blank">Ask Your First Question Now</a>
+        </div>
+
+        <!-- Play Store Download Banner -->
+        <div style="background-color: #1e293b; border-radius: 12px; border: 1px solid #334155; padding: 24px; text-align: center; margin: 40px 0 10px;">
+          <h4 style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 1px;">AstroFinix on Your Mobile</h4>
+          <p style="margin: 0 0 16px; font-size: 13px; color: #94a3b8; line-height: 1.5;">Download our app to get instant predictions, daily horoscopes, and chat with AstroFinix AI anytime.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 170px; height: auto; vertical-align: middle;" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>&copy; <%= new Date().getFullYear() %> AstroFinix. All rights reserved.</p>
+        <p>You received this email because you registered on <a href="https://astrofinix.com">astrofinix.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

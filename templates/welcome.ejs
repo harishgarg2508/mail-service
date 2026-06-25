@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to FutureBot AI</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eef2f5;
+    }
+    .header {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .content {
+      padding: 30px;
+      line-height: 1.6;
+    }
+    .content h2 {
+      color: #1f2937;
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .content p {
+      margin: 0 0 16px;
+      color: #4b5563;
+    }
+    .button-container {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #4f46e5;
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(79, 70, 229, 0.2);
+      transition: background-color 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #4338ca;
+    }
+    .footer {
+      background-color: #f9fafb;
+      padding: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      border-top: 1px solid #f3f4f6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>FutureBot AI</h1>
+      <div style="margin-top: 10px;">
+        <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 130px; height: auto; vertical-align: middle;" />
+        </a>
+      </div>
+    </div>
+    <div class="content">
+      <h2>Hello <%= name %>,</h2>
+      <p><%= message %></p>
+      <% if (locals.actionUrl && locals.actionText) { %>
+        <div class="button-container">
+          <a href="<%= actionUrl %>" class="btn" target="_blank"><%= actionText %></a>
+        </div>
+      <% } %>
+
+      <!-- Play Store Download Banner -->
+      <div style="background-color: #f3f4f6; border-radius: 8px; border: 1px solid #e5e7eb; padding: 20px; text-align: center; margin: 30px 0 10px;">
+        <h4 style="margin: 0 0 6px; font-size: 14px; font-weight: 700; color: #1f2937; text-transform: uppercase; letter-spacing: 1px;">AstroFinix on Your Mobile</h4>
+        <p style="margin: 0 0 12px; font-size: 12px; color: #4b5563; line-height: 1.5;">Download our app to get instant predictions, daily horoscopes, and chat with AstroFinix AI anytime.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 155px; height: auto; vertical-align: middle;" />
+        </a>
+      </div>
+    </div>
+    <div class="footer">
+      <p>&copy; <%= new Date().getFullYear() %> FutureBot AI. All rights reserved.</p>
+      <p>This is an automated message, please do not reply directly.</p>
+    </div>
+  </div>
+</body>
+</html>

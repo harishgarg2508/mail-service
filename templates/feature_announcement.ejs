@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= featureTitle %></title>
+  <style>
+    body {
+      font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #0b0f19;
+      color: #e2e8f0;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      background-color: #0b0f19;
+      width: 100%;
+      padding: 40px 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #131a2e;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid #1e293b;
+    }
+    .header {
+      background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .header .badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+    .content {
+      padding: 40px 30px;
+    }
+    .greeting {
+      font-size: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    .intro-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin-bottom: 30px;
+    }
+    
+    /* Feature Highlight Card */
+    .feature-card {
+      background-color: #1e293b;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .feature-image-container {
+      width: 100%;
+      text-align: center;
+      background-color: #0b0f19;
+      border-bottom: 1px solid #334155;
+    }
+    .feature-image {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .feature-details {
+      padding: 24px;
+    }
+    .feature-name {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+    .feature-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    /* Benefits List */
+    .benefits-section {
+      margin-bottom: 35px;
+    }
+    .benefits-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #a78bfa;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .benefit-icon {
+      color: #8b5cf6;
+      margin-right: 12px;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .benefit-text {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+
+    .cta-container {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      box-shadow: 0 6px 20px rgba(139, 92, 246, 0.6);
+    }
+    
+    .footer {
+      background-color: #0b0f19;
+      padding: 30px;
+      text-align: center;
+      font-size: 12px;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+    .footer p {
+      margin: 0 0 10px;
+    }
+    .footer a {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <!-- Gradient Header -->
+      <div class="header">
+        <div class="badge">🚀 NEW FEATURE RELEASE</div>
+        <h1>Unveiling Something New</h1>
+        <div style="margin-top: 15px;">
+          <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 140px; height: auto; vertical-align: middle;" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Body Content -->
+      <div class="content">
+        <h2 class="greeting">Hi <%= name %>,</h2>
+        <p class="intro-text">
+          We're constantly working to improve your journey and experience at <strong>AstroFinix AI</strong>. 
+          Today, we are thrilled to announce a brand new capability designed to bring you deeper insights and greater clarity!
+        </p>
+
+        <!-- Feature Card -->
+        <div class="feature-card">
+          <% if (locals.featureImage) { %>
+            <div class="feature-image-container">
+              <img src="<%= featureImage %>" alt="Feature Preview" class="feature-image" />
+            </div>
+          <% } %>
+          <div class="feature-details">
+            <h3 class="feature-name"><%= featureTitle %></h3>
+            <p class="feature-desc">
+              <%= featureDescription %>
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefits Section -->
+        <% if (locals.benefits && benefits.length > 0) { %>
+          <div class="benefits-section">
+            <h4 class="benefits-title">What this means for you:</h4>
+            <% benefits.forEach(function(benefit) { %>
+              <div class="benefit-item">
+                <span class="benefit-icon">✨</span>
+                <span class="benefit-text"><%= benefit %></span>
+              </div>
+            <% }); %>
+          </div>
+        <% } %>
+
+        <!-- Call to Action -->
+        <div class="cta-container">
+          <a href="<%= actionUrl %>" class="btn" target="_blank"><%= locals.actionText || 'Explore Now' %></a>
+        </div>
+
+        <!-- Play Store Download Banner -->
+        <div style="background-color: #1e293b; border-radius: 12px; border: 1px solid #334155; padding: 24px; text-align: center; margin: 40px 0 10px;">
+          <h4 style="margin: 0 0 8px; font-size: 15px; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 1px;">AstroFinix on Your Mobile</h4>
+          <p style="margin: 0 0 16px; font-size: 13px; color: #94a3b8; line-height: 1.5;">Download our app to get instant predictions, daily horoscopes, and chat with AstroFinix AI anytime.</p>
+          <a href="https://play.google.com/store/apps/details?id=com.astrofinix.ai" target="_blank" style="display: inline-block;">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="width: 170px; height: auto; vertical-align: middle;" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <p>&copy; <%= new Date().getFullYear() %> AstroFinix. All rights reserved.</p>
+        <p>You received this email because you are subscribed to updates from <a href="https://astrofinix.com">astrofinix.com</a>.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
