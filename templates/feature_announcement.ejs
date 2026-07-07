@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= featureTitle %></title>
+  <title><%= locals.featureTitle || 'New Feature Announcement' %></title>
   <style>
     body {
       font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -188,7 +188,7 @@
 
       <!-- Main Body Content -->
       <div class="content">
-        <h2 class="greeting">Hi <%= name %>,</h2>
+        <h2 class="greeting">Hi <%= locals.name || 'Astro Traveler' %>,</h2>
         <p class="intro-text">
           We're constantly working to improve your journey and experience at <strong>AstroFinix AI</strong>. 
           Today, we are thrilled to announce a brand new capability designed to bring you deeper insights and greater clarity!
@@ -196,24 +196,34 @@
 
         <!-- Feature Card -->
         <div class="feature-card">
-          <% if (locals.featureImage) { %>
+          <% if (typeof locals.featureImage === 'undefined' || locals.featureImage) { %>
             <div class="feature-image-container">
-              <img src="<%= featureImage %>" alt="Feature Preview" class="feature-image" />
+              <img src="<%= locals.featureImage || 'https://res.cloudinary.com/dciagwfox/image/upload/v1783422295/63a7edd6-09ee-413f-95a6-1f2c321ba00d.png' %>" alt="Feature Preview" class="feature-image" />
             </div>
           <% } %>
           <div class="feature-details">
-            <h3 class="feature-name"><%= featureTitle %></h3>
+            <h3 class="feature-name"><%= locals.featureTitle || '5-Day Time Travel Dashboard' %></h3>
             <p class="feature-desc">
-              <%= featureDescription %>
+              <%= locals.featureDescription || 'We have launched a new feature where you can now navigate to the past and future two days of your cosmic battery and other key astrological indices. Now you can check your future energy and can plan your next day.' %>
             </p>
           </div>
         </div>
 
         <!-- Benefits Section -->
-        <% if (locals.benefits && benefits.length > 0) { %>
+        <% 
+          var displayBenefits = locals.benefits;
+          if (!displayBenefits || displayBenefits.length === 0) {
+            displayBenefits = [
+              "Navigate 2 days into the past to analyze and reflect on your energy trends.",
+              "Look 2 days into the future to plan important tasks around peak battery cycles.",
+              "Track your Health Shield, Wealth, Authority, and Fortune patterns across a 5-day window."
+            ];
+          }
+        %>
+        <% if (displayBenefits && displayBenefits.length > 0) { %>
           <div class="benefits-section">
             <h4 class="benefits-title">What this means for you:</h4>
-            <% benefits.forEach(function(benefit) { %>
+            <% displayBenefits.forEach(function(benefit) { %>
               <div class="benefit-item">
                 <span class="benefit-icon">✨</span>
                 <span class="benefit-text"><%= benefit %></span>
@@ -224,7 +234,7 @@
 
         <!-- Call to Action -->
         <div class="cta-container">
-          <a href="<%= actionUrl %>" class="btn" target="_blank"><%= locals.actionText || 'Explore Now' %></a>
+          <a href="<%= locals.actionUrl || 'https://astrofinix.com/dashboard' %>" class="btn" target="_blank"><%= locals.actionText || 'Explore Now' %></a>
         </div>
 
         <!-- Play Store Download Banner -->
